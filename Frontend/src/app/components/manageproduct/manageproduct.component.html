@@ -1,0 +1,185 @@
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+<!-- JavaScript Bundle with Popper -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+</head>
+<nav class="navbar navbar-light bg-light">
+    <div>
+        <h2>Manage Products</h2>
+    </div>
+    <button type="submit" onclick="location.href='/addproduct'" class="btn btn-primary"
+        style="background-color: gold; color: black; border: gold; ">Add New Product</button>
+</nav>
+
+
+<div class="container">
+    <table class="table">
+
+        <tbody *ngFor="let item of products">
+            <tr>
+                <th scope="row">1</th>
+                <td>{{item.productname}} <br> {{item.price|currency:''}}</td>
+                <td></td>
+                <td>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-warning" data-toggle="modal"
+                        data-target="#exampleModal">
+                        Edit </button>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-outline-danger" data-toggle="modal"
+                        data-target="#exampleModal2">
+                        Delete </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
+</div>
+
+
+
+
+
+
+
+<!--MOdal popup for edit-->
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Edit Product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="card-body">
+                    <div class="column">
+
+                        <form [formGroup]="editproductForm" (ngSubmit)="edit();">
+                            <div class="form-group ">
+                                <label for="productname">ProductName</label>
+                                <input type="text" class="form-control" id="productname" name="productname"
+                                    placeholder="Product Name" formControlName="productname">
+                                <div style="color: red;"
+                                    *ngIf="(f['productname'].touched  || submitted) && f['productname'].errors?.['required']">
+                                    ProductName required*</div>
+                                <div style="color: red;" *ngIf="f['productname'].errors?.['maxlength']">Product Name
+                                    should not be
+                                    more then 64 chracters</div>
+                            </div><br>
+                            <div class="form-group">
+                                <label for="department">Department</label>
+                                <input type="text" class="form-control" id="department" name="department"
+                                    placeholder="Department" formControlName="department">
+                                <div style="color: red;"
+                                    *ngIf="(f['department'].touched  || submitted) && f['department'].errors?.['required']">
+                                    Department required*</div>
+                            </div> <br>
+                            <div class="form-group ">
+                                <label for="price">Price</label>
+                                <input type="text" class="form-control" id="price" name="price" placeholder="Price"
+                                    formControlName="price">
+                                <div style="color: red;"
+                                    *ngIf="(f['price'].touched  || submitted) && f['price'].errors?.['required']">
+                                    Price required*</div>
+                            </div><br>
+                            <div class="form-group">
+                                <label for="discount">Discount Price</label>
+                                <input type="text" class="form-control" id="discount" name="discount"
+                                    placeholder="Discount Price" formControlName="discount">
+                                <div style="color: red;"
+                                    *ngIf="(f['discount'].touched  || submitted) && f['discount'].errors?.['required']">
+                                    Discount Price required* and must be less then Price</div>
+                            </div> <br>
+                            <div class="form-group">
+                                <label for="productimg">Product Image</label>
+                                <input type="text" class="form-control" id="productimg" name="productimg"
+                                    placeholder="Product Image" formControlName="productimg">
+                                <div style="color: red;"
+                                    *ngIf="(f['productimg'].touched  || submitted) && f['productimg'].errors?.['required']">
+                                    Product Image required*</div>
+                            </div> <br>
+
+                            <div class="form-group ">
+                                <label for="productdesc">Product Description</label>
+                                <textarea style="height: 100px;" class="form-control" id="productdesc"
+                                    name="productdesc" placeholder="Product Description"
+                                    formControlName="productdesc"></textarea>
+                                <div style="color: red;"
+                                    *ngIf="(f['productdesc'].touched  || submitted) && f['productdesc'].errors?.['required']">
+                                    Product Description required*</div>
+                                <div style="color: red;" *ngIf="f['productdesc'].errors?.['minlength']">Description must
+                                    be
+                                    atleast 20 chracters</div>
+                            </div><br>
+                            <div class="form-group form-check">
+                                <label class="form-check-label" for="exampleCheck1">Top Selling Item</label>
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="exampleCheck1"
+                                    formControlName="terms">
+                                <div style="color: red;"
+                                    *ngIf="(f['terms'].touched ||submitted) && f['terms'].errors?.['required']">checkbox
+                                    required</div>
+
+                            </div><br>
+                        </form>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save Changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <button type="button" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal2">
+        Delete </button>
+
+
+    <!--MOdal popup for delete-->
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModal2Label"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModal2Label">Delete Product</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to delete the product?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Delete</button>
+                </div>
+            </div>
+        </div>
+    </div>

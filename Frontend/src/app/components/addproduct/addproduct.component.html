@@ -1,0 +1,97 @@
+<div>
+
+    <div class="container" style="width: 700px;padding: 20px 50px;">
+
+        <div style="border-radius: 3px; border-color: black;">
+            <div class="container" style="width: 500px;">
+                <div class="card">
+                    <div class="card-header" style="font-size: x-large;">
+                        Add New Product
+                    </div>
+                    <div class="card-body">
+                        <div class="column">
+
+                            <form [formGroup]="addproductForm" (ngSubmit)="register();">
+                                <div class="form-group ">
+                                    <label for="productname">ProductName</label>
+                                    <input type="text" class="form-control" id="productname" name="productname"
+                                        placeholder="Product Name" formControlName="productname">
+                                    <div style="color: red;"
+                                        *ngIf="(f['productname'].touched  || submitted) && f['productname'].errors?.['required']">
+                                        ProductName required*</div>
+                                    <div style="color: red;" *ngIf="f['productname'].errors?.['maxlength']">Product Name
+                                        should not be
+                                        more then 64 chracters</div>
+                                </div><br>
+                                <div class="form-group">
+                                    <label for="department">Department</label>
+                                    <input type="text" class="form-control" id="department" name="department"
+                                        placeholder="Department" formControlName="department">
+                                    <div style="color: red;"
+                                        *ngIf="(f['department'].touched  || submitted) && f['department'].errors?.['required']">
+                                        Department required*</div>
+                                </div> <br>
+                                <div class="form-group ">
+                                    <label for="price">Price</label>
+                                    <input type="text" class="form-control" id="price" name="price" placeholder="Price"
+                                        formControlName="price">
+                                    <div style="color: red;"
+                                        *ngIf="(f['price'].touched  || submitted) && f['price'].errors?.['required']">
+                                        Price required*</div>
+                                </div><br>
+                                <div class="form-group">
+                                    <label for="discount">Discount Price</label>
+                                    <input type="text" class="form-control" id="discount" name="discount"
+                                        placeholder="Discount Price" formControlName="discount">
+                                    <div style="color: red;"
+                                        *ngIf="(f['discount'].touched  || submitted) && f['discount'].errors?.['required']">
+                                        Discount Price required* and must be less then Price</div>
+                                </div> <br>
+                                <div class="form-group">
+                                    <label for="productimg">Product Image</label>
+                                    <input type="text" class="form-control" id="productimg" name="productimg"
+                                        placeholder="Product Image" formControlName="productimg">
+                                    <div style="color: red;"
+                                        *ngIf="(f['productimg'].touched  || submitted) && f['productimg'].errors?.['required']">
+                                        Product Image required*</div>
+                                </div> <br>
+
+                                <div class="form-group ">
+                                    <label for="productdesc">Product Description</label>
+                                    <textarea style="height: 100px;" class="form-control" id="productdesc"
+                                        name="productdesc" placeholder="Product Description"
+                                        formControlName="productdesc"></textarea>
+                                    <div style="color: red;"
+                                        *ngIf="(f['productdesc'].touched  || submitted) && f['productdesc'].errors?.['required']">
+                                        Product Description required*</div>
+                                    <div style="color: red;" *ngIf="f['productdesc'].errors?.['minlength']">Description
+                                        must be
+                                        atleast 20 chracters</div>
+                                </div><br>
+                                <div class="form-group form-check">
+                                    <label class="form-check-label" for="exampleCheck1">Top Selling Item</label>
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1"
+                                        name="exampleCheck1" formControlName="terms">
+                                    <div style="color: red;"
+                                        *ngIf="(f['terms'].touched ||submitted) && f['terms'].errors?.['required']">
+                                        checkbox
+                                        required</div>
+
+                                </div><br>
+
+
+
+                                <button type="submit" class="btn btn-primary"
+                                    style="background-color: gold; color: black; border: gold; float: right;"
+                                    [disabled]="!addproductForm.valid">Add New Product</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="form-row">
+            <div class=" form-group col-md-12" style="height: 50px;"></div>
+        </div>
+    </div>

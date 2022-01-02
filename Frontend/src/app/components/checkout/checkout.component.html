@@ -1,0 +1,110 @@
+<div>
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <div class="container" style="width: 700px;padding: 20px 50px;">
+
+                <div style="border-radius: 3px; border-color: black;">
+                    <div class="container" style="width: 500px;">
+                        <div class="card">
+                            <div class="card-header" style="font-size: x-large;">
+                                User Info
+                            </div>
+                            <div class="card-body">
+                                <div class="column">
+
+                                    <form [formGroup]="userForm" (ngSubmit)="submit();">
+                                        <div class="form-group" style="padding-right: 0px;padding-left: 2px;">
+                                            <input type="text" class="form-control" id="firstname" name="firstname"
+                                                placeholder="First Name" formControlName="firstname">
+                                            <div style="color: red;"
+                                                *ngIf="(f['firstname'].touched  || submitted) && f['firstname'].errors?.['required']">
+                                                FirstName required*</div>
+                                        </div><br>
+                                        <div class="form-group" style="padding-right: 0px;padding-left: 2px;">
+                                            <input type="text" class="form-control" id="lastname" name="lastname"
+                                                placeholder="Last Name" formControlName="lastname">
+                                            <div style="color: red;"
+                                                *ngIf="(f['lastname'].touched  || submitted) && f['lastname'].errors?.['required']">
+                                                LastName required*</div>
+                                        </div>
+                                        <br>
+
+                                        <div class="form-group">
+                                            <input type="email" class="form-control" id="email" placeholder="Email"
+                                                name="email" formControlName="email">
+                                            <div style="color: red;"
+                                                *ngIf="(f['email'].touched || submitted) && f['email'].errors?.['required']">
+                                                Email
+                                                required*</div>
+                                            <div style="color: red;" *ngIf="f['email'].errors?.['email']">Enter a valid
+                                                emailaddress,e.g.,john@example.com</div>
+                                        </div><br>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-group col-md-12">
+            <div class="container" style="width: 700px;padding: 20px 50px;">
+
+                <div style="border-radius: 3px; border-color: black;">
+                    <div class="container" style="width: 500px;">
+                        <div class="card">
+                            <div class="card-header" style="font-size: x-large;">
+                                Shipping Address
+                            </div>
+                            <div class="card-body">
+                                <div class="column">
+
+                                    <form [formGroup]="userForm" (ngSubmit)="submit();">
+                                        <div class="form-group" style="padding-right: 0px;padding-left: 2px;">
+                                            <input type="text" class="form-control" id="street" name="street"
+                                                placeholder="Street Address" formControlName="street">
+                                            <div style="color: red;"
+                                                *ngIf="(f['street'].touched  || submitted) && f['street'].errors?.['required']">
+                                                Street Address required*</div>
+                                        </div><br>
+                                        <div class="form-group" style="padding-right: 0px;padding-left: 2px;">
+                                            <input type="text" class="form-control" id="city" name="city"
+                                                placeholder="City" formControlName="city">
+                                            <div style="color: red;"
+                                                *ngIf="(f['city'].touched  || submitted) && f['city'].errors?.['required']">
+                                                City required*</div>
+                                        </div>
+                                        <br>
+                                        <div class="form-group" style="padding-right: 0px;padding-left: 2px;">
+                                            <input type="text" class="form-control" id="state" name="state"
+                                                placeholder="State" formControlName="state">
+                                            <div style="color: red;"
+                                                *ngIf="(f['state'].touched  || submitted) && f['state'].errors?.['required']">
+                                                State required*</div>
+                                        </div><br>
+                                        <div class="form-group" style="padding-right: 0px;padding-left: 2px;">
+                                            <input type="number" class="form-control" id="zipcode" name="zipcode"
+                                                placeholder="ZipCode" formControlName="zipcode">
+                                            <div style="color: red;"
+                                                *ngIf="(f['zipcode'].touched  || submitted) && f['zipcode'].errors?.['required']">
+                                                ZipCode required*</div>
+                                        </div>
+                                        <br>
+                                        <button style="float: right;background-color: gold;color: black;" type="submit"
+                                            class="btn btn-warning">Place Order</button>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class=" form-group col-md-12" style="height: 50px;"></div>
+    </div>
+</div>

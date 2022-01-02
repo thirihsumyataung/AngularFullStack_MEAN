@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row" style="margin-bottom: 25px;margin-top: 30px;">
+        <h3>Manage Orders</h3>
+    </div>
+
+    <div class="row" *ngFor='let data of order' >
+        
+        <div *ngIf="data.isdelivered==true" class="col col-10">
+            <h5 style="color: green;">{{data.orderno}}</h5>
+            <h6>{{data.email}}</h6>
+        </div>
+        <div *ngIf="data.isdelivered==true" class="col col-2" style="margin-top: 18px;">
+            <a style="color: red;">Delete</a>
+        </div>
+
+
+            <div *ngIf="data.isdelivered==false" class="col col-10">
+                <h5>{{data.orderno}}</h5>
+                <h6>{{data.email}}</h6>
+            </div>
+            <div *ngIf="data.isdelivered==false" class="col col-2" style="margin-top: 18px;">
+                <a>Process | </a><a style="color: red;">Delete</a>
+            </div>
+            <hr>
+
+    </div>
+</div>

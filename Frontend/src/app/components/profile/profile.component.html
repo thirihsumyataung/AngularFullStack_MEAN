@@ -1,0 +1,73 @@
+<div class="container border" style="margin:7%;" *ngFor="let data of profileList" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+    <div class="row" style="margin: 80px;">
+        <div class="col">
+            <div class="row-25 ">
+                <img src="../../../assets/blank-profile-picture-973460_640.png" width="150" height="150" class="rounded-circle" style="margin-left: 35%;" >
+            </div>
+            <div class="row" style="margin: 10%;">
+                <div class="col " >
+                    <button class="btn " style="margin-left: 30%;width: 90%; background-color: #f7c000;color: white;font-size: x-small;font-weight: bold;">Delete Image</button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-primary " style="margin-left: 30%; width: 90%;font-size: x-small;font-weight: bold;">Upload</button>
+                </div>
+            </div>       
+        </div>
+        <div class="col ">
+            <div class="row">
+                <span>
+                    First Name
+                </span>
+                <span style="font-weight: bold;">
+                    {{data.firstname}}
+                </span>
+            </div>
+            <div class="row">
+                <span>
+                    Email
+                </span>
+                <span style="font-weight: bold;">
+                    {{data.email}}
+                </span>
+            </div>
+            <div class="row">
+                <span>
+                    Phone
+                </span>
+                <span style="font-weight: bold;">
+                    {{data.phone}}
+                </span>
+            </div>
+            <div class="row">
+                <span>
+                    Interests
+                </span>
+                <span style="font-weight: bold;">
+                    {{data.interests}}
+                </span>
+            </div>
+            <div class="row">
+                <span>
+                    Address
+                </span>
+                <span style="font-weight: bold;">
+                    {{data.address}}
+                </span>
+            </div>
+        </div>
+        <div class="col" style="position: relative;">
+            <div class="row">
+                <span>
+                    Last Name
+                </span>
+                <span style="font-weight: bold;">
+                    {{data.lastname}}
+                </span>
+            </div>
+            <div class="row" style="position: absolute; bottom: 20px; right: 250px;">
+                <button routerLink="/editProfile" class="btn btn-primary btn-sm" style="font-size: x-small;font-weight: bold;" >Edit</button>
+            </div>
+        </div>
+        
+    </div>
+</div>

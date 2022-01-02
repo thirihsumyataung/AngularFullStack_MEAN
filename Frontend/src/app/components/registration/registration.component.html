@@ -1,0 +1,121 @@
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS only -->
+
+    
+
+    <!-- JavaScript Bundle with Popper -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+
+</head>
+<!-- <app-header></app-header> -->
+<div class="form-row" style="height: 100%;">
+    <div class="form-group col-md-6" style="padding-left: 0px;padding-right: 2px;">
+        <div class="container" style="width: 700px;padding: 20px 50px;">
+
+            <div>
+                <h1>Welcome to Shop 24*7</h1>
+            </div>
+            <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla venenatis magna gravida tellus tempor
+                ut, lacinia
+                nulla efficitur. Pallentesque ac leo convallis, tempor risus quis, porta tellus. Duis scelerisque leo et
+                dui
+                auctor vehicula. Sed sit amet efficitur lectus. In hac habitasse platea dictumst. marcenas congue sed
+                elit in commodo.
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="form-group col-md-6" style="padding-left: 0px;padding-right: 2px;">
+        <div class="container" style="width: 700px;padding: 20px 50px;">
+
+            <div style="border-radius: 3px; border-color: black;">
+                <div class="container" style="width: 500px;">
+                    <div class="card">
+                        <div class="card-header" style="font-size: x-large;">
+                            Register
+                        </div>
+                        <div class="card-body">
+                            <div class="column">
+
+                                <form [formGroup]="registerForm" (ngSubmit)="register();">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6" style="padding-right: 0px;padding-left: 2px;">
+                                            <input type="text" class="form-control" id="firstname" name="firstname"
+                                                placeholder="First Name" formControlName="firstname">
+                                            <div style="color: red;"
+                                                *ngIf="(f['firstname'].touched  || submitted) && f['firstname'].errors?.['required']">
+                                                FirstName required*</div>
+                                        </div>
+                                        <div class="form-group col-md-6" style="padding-right: 0px;padding-left: 2px;">
+                                            <input type="text" class="form-control" id="lastname" name="lastname"
+                                                placeholder="Last Name" formControlName="lastname">
+                                            <div style="color: red;"
+                                                *ngIf="(f['lastname'].touched  || submitted) && f['lastname'].errors?.['required']">
+                                                LastName required*</div>
+                                        </div>
+                                    </div> <br>
+
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="email" placeholder="Email"
+                                            name="email" formControlName="email">
+                                        <div style="color: red;"
+                                            *ngIf="(f['email'].touched || submitted) && f['email'].errors?.['required']">
+                                            Email
+                                            required*</div>
+                                        <div style="color: red;" *ngIf="f['email'].errors?.['email']">Enter a valid
+                                            emailaddress,e.g.,john@example.com</div>
+                                    </div><br>
+
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="password" placeholder="Password"
+                                            name="password" formControlName="password">
+                                        <div style="color: red;"
+                                            *ngIf="(f['password'].touched  || submitted) && f['password'].errors?.['required']">
+                                            Password required*</div>
+                                        <div style="color: red;" *ngIf="f['password'].errors?.['minlength']">Password
+                                            must be
+                                            atleast 6 chracters</div>
+
+                                    </div><br>
+                                    <div class="form-group">
+                                        <input type="password" class="form-control" id="confirmpassword"
+                                            placeholder="ConfirmPassword" name="confirmpassword"
+                                            formControlName="confirmpassword">
+                                        <div style="color: red;"
+                                            *ngIf="(f['confirmpassword'].touched || submitted)&& f['confirmpassword'].errors?.['required']">
+                                            Confirm Password required*</div>
+                                        <div style="color: red;" *ngIf="f['confirmpassword'].errors?.['Mustmatch']">
+                                            Password
+                                            didn't match</div>
+
+
+                                    </div><br>
+
+                                    <button type="submit" class="btn btn-primary">Register</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>

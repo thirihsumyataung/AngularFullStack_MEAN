@@ -1,0 +1,145 @@
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- CSS only -->
+    
+
+    <!-- JavaScript Bundle with Popper -->
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    
+    <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+
+
+</head>
+<div>
+    <div class="form-row">
+        <div class="form-group col-md-2"></div>
+        <div class="form-group col-md-8">
+
+            <div>
+                <!-- Carousel -->
+                <div id="demo" class="carousel slide" data-bs-ride="carousel">
+
+                    <!-- Indicators/dots -->
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+                        <button type="button" data-bs-target="#demo" data-bs-slide-to="3"></button>
+
+                    </div>
+
+                    <!-- The slideshow/carousel -->
+                    <div class="carousel-inner">
+
+                        <div class="carousel-item active">
+                            <img src="https://images.macrumors.com/t/VlHfZ4B-yZsQ6eSnqJNrWWrc-W0=/800x0/article-new/2021/10/14-16-inch-2021-mbps-back-to-back-feature-orange.jpg?lossy"
+                                alt="Los Angeles" class="d-block" style="width:100%;height: 70%;">
+                            <div class="carousel-caption">
+                                <h3>Apple imac</h3>
+                                <p>Work hard anywhere.</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="https://pict-c.sindonews.net/dyn/620/pena/news/2021/11/12/122/597573/kurang-dari-satu-hari-preorder-iphone-13-di-ibox-ludes-terjual-jxz.jpg"
+                                alt="iphone pro" class="d-block" style="width:100%;height: 70%;">
+                            <div class="carousel-caption">
+                                <h3>iPhone Pro</h3>
+                                <p>Pro cameras, Pro display. Pro performance</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="https://www.macworld.co.uk/cmsdata/features/3799408/apple_airpods_max_where_to_buy_deals_thumb800.jpg"
+                                alt="headphones" class="d-block" style="width:100%;height: 70%;">
+                            <div class="carousel-caption">
+                                <h3>Head Phones</h3>
+                                <p>Do Not Disturb</p>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <img src="https://images.macrumors.com/t/rOHQ2RK-Icmz3nA3XyFGyjUqpJU=/1600x0/article-new/2014/09/apple-watch-series-7.jpg"
+                                alt="New York" class="d-block" style="width:100%;height: 70%;">
+                            <div class="carousel-caption">
+                                <h3>Apple</h3>
+                                <p>Nothing is ours, except time.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Left and right controls/icons -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+
+                </div>
+            </div>
+
+            <div style="margin-top: 50px;">
+                <div class="form-row">
+                    <div class="form-group col-md-4"><a href="#"><img
+                                src="https://cdn.arstechnica.net/wp-content/uploads/2009/11/imac_27_small_ars.jpg"
+                                class="zoom" alt="Cinque Terre" id="rcorners2">
+                        </a> </div>
+
+                    <div class="form-group col-md-4"><a href="#"> <img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9A1JdZP47PZQmjml87XLXvV-DBVHsRNK-nQ&usqp=CAU"
+                                class="zoom" alt="Cinque Terre" id="rcorners2">
+                        </a></div>
+                    <div class="form-group col-md-4"><a href="#"><img
+                                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLAwDxKXFriI1BknUt10U8cfRVh-pL-PI8zPBtXuZ45jLy5Q4awmeU7kfOxPQCByfksTE&usqp=CAU"
+                                class="zoom" alt="Cinque Terre" id="rcorners2">
+                        </a></div>
+
+                </div>
+            </div>
+
+
+
+            <!----------------------------------------------------------------------------------------------------->
+            <div class="form-row">
+                <div class="form-group col-md-12" style="margin: 50px;">
+                    <h2>Top Products</h2>
+                </div>
+
+                <div>
+                    <div *ngFor="let item of products">
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <div class="card" style="width: 18rem;">
+                                    <img class="card-img-top" src="{{item.image}}" alt="Card image cap">
+                                    <div class="card-body">
+                                        <p class="card-text" style="text-align: center;font-weight: bold;">
+                                            {{item.price|currency:''}}</p>
+                                        <a href="#" class="btn btn-primary" style="align-items: flex-end;">Add to
+                                            Cart</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!----------------------------------------------------------------------------------------------------->
+                    </div>
+
+
+                    <div class="form-group col-md-2"></div>
+
+                </div>
+                <div class="form-row">
+                    <div class=" form-group col-md-12" style="height: 50px;"></div>
+                </div>
+            </div>

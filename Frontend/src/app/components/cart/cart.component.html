@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row" style="margin-bottom: 25px;margin-top: 10px;">
+        <h3>Cart</h3>
+    </div>
+
+    <div class="row" *ngFor='let data of cart'>
+        <div class="col col-10">
+            <h5>{{data.quantity}} X {{data.name}}</h5>
+            <h6>Price {{data.price | currency:'EUR'}}</h6>
+            <h6>Discount {{data.price * 0.10 - 0.01 | currency:'EUR'}}</h6>
+            <a style="color: red;">Remove</a>
+        </div>
+        <div class="col col-2" style="margin-top: 35px;">
+            <h5>{{data.price*data.quantity | currency:'EUR'}}</h5>
+        </div>
+        <hr>
+    </div>
+    <div class="row">
+        <div class="col col-9">
+
+        </div>
+        <div class="col col-3">
+            <h5>Grand Total {{total | currency:'EUR'}}</h5>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col col-9">
+    
+        </div>
+        <div class="col col-3">
+           <button type="button" class="btn" style="background-color: #f7c000; width: 100%;" >Checkout</button>
+        </div>
+    </div>
+</div>

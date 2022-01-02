@@ -1,0 +1,18 @@
+<div class="container">
+<div class="card-wrapper" >
+    <div *ngFor="let data of product">
+     <div class="card" style="width: 18rem;">
+        <img src={{data.image}} class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">{{data.name}}</h5>
+          <h6>{{data.price | currency}}</h6>
+          <button class="button pill">{{data.category.name}}</button>
+          <h6></h6>
+          <p class="card-text">{{data.description}}</p>
+          <a href="#" class="btn btn-primary" >Show Details</a>
+        </div>
+      </div>
+      </div>
+</div>
+    
+</div>
